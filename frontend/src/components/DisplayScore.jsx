@@ -10,14 +10,14 @@ function DisplayScore({ resError, newResult, resultVisible }) {
   resError = false;
   //process newResult
   const rows = [
-    createData("TeamName1", "Group", "Points", "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName1", "Group", "Points", "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName1", "Group", "Points", "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName1", "Group", "Points", "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName1", "Group", "Points", "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName1", "Group", "Points", "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName1", "Group", "Points", "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName1", "Group", "Points", "Total Goals", "Alt Points", "Registration"),
+    createData("TeamName1", 1, 5, "Total Goals", "Alt Points", "Registration"),
+    createData("TeamName2", 1, 4, "Total Goals", "Alt Points", "Registration"),
+    createData("TeamName3", 1, 3, "Total Goals", "Alt Points", "Registration"),
+    createData("TeamName4", 1, 2, "Total Goals", "Alt Points", "Registration"),
+    createData("TeamName5", 2, 5, "Total Goals", "Alt Points", "Registration"),
+    createData("TeamName6", 2, 4, "Total Goals", "Alt Points", "Registration"),
+    createData("TeamName7", 2, 4, "Total Goals", "Alt Points", "Registration"),
+    createData("TeamName8", 2, 3, "Total Goals", "Alt Points", "Registration"),
   ];
 
   return (

@@ -19,6 +19,11 @@
   width: 100%;
 }
 
+.MuiTableContainer-root {
+  width: 80% !important;
+  margin-bottom: 20px;
+}
+
 .title {
   margin-top: 5%;
   display:flex;
@@ -41,24 +46,6 @@
 
 .error {
   margin-top: 5px;
-}
-
-.newlink label {
-  font-size: 20px;
-  padding-top: 5%;
-}
-
-.newlink p {
-  font-size: 18px;
-  overflow-wrap: anywhere;
-}
-
-.newlink a {
-  font-size: 18px;
-  overflow-wrap: anywhere;
-}
-
-.error {
   color: red;
   padding-top: 5px;
 }
@@ -82,5 +69,9 @@
 
   .MuiBox-root {
     width: 90%;
+  }
+
+  .MuiTableContainer-root {
+    width: 90% !important;
   }
 }

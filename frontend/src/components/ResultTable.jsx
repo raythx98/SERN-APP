@@ -9,6 +9,8 @@ import Paper from "@mui/material/Paper";
 
 function ResultTable({rows}) {
 
+  console.log("rows: ", rows);
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -24,15 +26,15 @@ function ResultTable({rows}) {
         </TableHead>
 
         <TableBody>
-          {rows.map((row) => (
+          {rows && rows.map((row) => (
             <TableRow
-              key={row.name}
+              key={row.tname}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.tname}
               </TableCell>
-              <TableCell align="right">{row.group}</TableCell>
+              <TableCell align="right">{row.gnum}</TableCell>
               <TableCell align="right">{row.tpoint}</TableCell>
               <TableCell align="right">{row.tgoal}</TableCell>
               <TableCell align="right">{row.apoint}</TableCell>

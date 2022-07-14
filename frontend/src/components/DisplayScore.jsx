@@ -1,24 +1,7 @@
 import React from "react";
 import ResultTable from "./ResultTable";
 
-function createData(name, group, tpoint, tgoal, apoint, rdate) {
-  return { name, group, tpoint, tgoal, apoint, rdate };
-}
-
 function DisplayScore({ resError, newResult, resultVisible }) {
-  resultVisible = true;
-  resError = false;
-  //process newResult
-  const rows = [
-    createData("TeamName1", 1, 5, "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName2", 1, 4, "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName3", 1, 3, "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName4", 1, 2, "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName5", 2, 5, "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName6", 2, 4, "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName7", 2, 4, "Total Goals", "Alt Points", "Registration"),
-    createData("TeamName8", 2, 3, "Total Goals", "Alt Points", "Registration"),
-  ];
 
   return (
     <div>
@@ -28,7 +11,7 @@ function DisplayScore({ resError, newResult, resultVisible }) {
         ) : (
           <div className="newlink information">
             <h1>First round results: </h1>
-            <ResultTable rows={rows}/>
+            <ResultTable rows={newResult}/>
           </div>
         )
       ) : null}

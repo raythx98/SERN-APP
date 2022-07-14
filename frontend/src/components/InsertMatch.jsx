@@ -3,7 +3,7 @@ import { useState } from "react";
 import Axios from "axios";
 import { Button, TextField, Box, Grid } from "@mui/material";
 
-function InsertMatch({ setResError, setNewResult, setResultVisible }) {
+function InsertMatch({ setResError, setNewResult, setResultVisible, setHistory }) {
   const [team, setTeam] = useState("");
   const [teamError, setTeamError] = useState("");
   const [match, setMatch] = useState("");
@@ -70,6 +70,26 @@ function InsertMatch({ setResError, setNewResult, setResultVisible }) {
     return match_list;
   }
 
+  function getHistory() {
+    Axios.get("//" + process.env.REACT_APP_BASE_URL + "getHistory")
+      .then((res) => {
+        console.log(res);
+        console.log("history: ", res.data);
+        setHistory(res.data);
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log("Response Error, data: ", error.response.data);
+          console.log("Response Error, header: ", error.response.headers);
+        } else if (error.request) {
+          console.log("Request Error: ", error.request);
+        } else {
+          console.log("Error ", error.message);
+        }
+        console.log(error.config);
+      });
+  }
+
   const getResult = () => {
     setTeamError("");
     setMatchError("");
@@ -109,10 +129,11 @@ function InsertMatch({ setResError, setNewResult, setResultVisible }) {
       .then((res) => {
         console.log(res);
         setNewResult(res.data);
+        getHistory();
       })
       .catch(function (error) {
         setResError(
-          "Server error, please contact hongxian@comp.nus.edu.sg for urgent attention..."
+          error.response.data + " Server error, please contact hongxian@comp.nus.edu.sg for urgent attention..."
         );
         if (error.response) {
           console.log("Response Error, data: ", error.response.data);

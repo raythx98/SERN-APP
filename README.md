@@ -31,7 +31,7 @@ Server status: Deployed & Running
 
 In the unfortunate event that my server crashes during evaluation, the first alternative is to contact me at [hongxian@comp.nus.edu.sg](mailto:hongxian@comp.nus.edu.sg) or through my mobile phone and I will fix it asap.
 
-Alternative, here are the steps to run my url shortener service on local.
+Alternative, here are the steps to run my championship evaluator service on local.
 
 - ### Client
 1. Ensure that node is installed

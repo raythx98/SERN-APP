@@ -181,10 +181,10 @@ router.post("/", (req, res) => {
                 } else {
                   console.log(result);
                   result.forEach((element, index) => {
-                    // date_obj = new Date(element.rdate)=
-                    //  new_date = date_obj.getDate().toString().padStart(2, '0');
-                    //  new_month = date_obj.getMonth().toString().padStart(2, '0');
-                    //  element.rdate = new_date + '/' + new_month;
+                     const date_obj = new Date(element.rdate)
+                     new_date = date_obj.getDate().toString().padStart(2, '0');
+                     new_month = (date_obj.getMonth()+1).toString().padStart(2, '0');
+                     element.rdate = new_date + '/' + new_month;
                   });
                   console.log(result);
                   res.send(result);

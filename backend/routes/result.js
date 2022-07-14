@@ -47,20 +47,19 @@ router.get("/getHistory", (req, res) => {
                 .json("Database error after insertion, please refresh...");
             } else {
               console.log(result);
+              if (query_size === 1) {
+                result = [result];
+              }
               result.forEach((element, index) => {
                 element.forEach((innerElement, innerIndex) => {
-                 const date_obj = new Date(element.rdate)
+                 const date_obj = new Date(innerElement.rdate)
                  new_date = date_obj.getDate().toString().padStart(2, '0');
                  new_month = (date_obj.getMonth()+1).toString().padStart(2, '0');
-                 element.rdate = new_date + '/' + new_month;
+                 innerElement.rdate = new_date + '/' + new_month;
                 });
               });
               console.log(result);
-              if (query_size === 1) {
-                res.send([result]);
-              } else {
-                res.send(result);
-              }
+              res.send(result);
             }
           }
         );

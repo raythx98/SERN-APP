@@ -10,7 +10,6 @@ Server status: Deployed & Running
 - Styled (...? very minimalistic...)
 - Data persistence with MySQL
 - Deployed on AWS
-- Some [unit/integration testing]() - work in progress...
 
 ---
 
@@ -23,6 +22,7 @@ Server status: Deployed & Running
   - put an alphabet in the integer fields
   - making teams play against themself
   - making 2 teams play each other more/less than once
+  - extra spaces or newline characters
   - and more...
 
 ---
